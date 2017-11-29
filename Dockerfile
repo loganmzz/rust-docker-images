@@ -2,6 +2,10 @@ FROM buildpack-deps:stretch-scm
 
 LABEL maintainer="Logan Mzz"
 
+LABEL org.rust-lang.version="1.21.0"
+LABEL org.rust-lang.channel="stable"
+LABEL org.rust-lang.release-date="2017-10-09"
+
 ENV RUST_VERSION 1.21.0
 
 RUN apt update \
