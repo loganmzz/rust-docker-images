@@ -15,3 +15,5 @@ USER rust
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain ${RUST_VERSION}
 
 ENV PATH /home/rust/.cargo/bin:$PATH
+
+ENV HOME /home/rust
