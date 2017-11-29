@@ -4,7 +4,7 @@
 
 ### As a CLI
 
-docker run --rm --tty --user $(id -u) --volume $(pwd):$(pwd) --workdir $(pwd) loganmzz/rust:1.21.0 cargo test
+docker run --rm --tty --user $(id -u) --volume $(pwd):$(pwd) --workdir $(pwd) loganmzz/rust cargo test
 
 ## Usage as builder pattern
 
@@ -14,7 +14,7 @@ Create a `Dockerfile.build` file:
 
 ```Dockerfile
 
-FROM loganmzz/rust:1.21.0
+FROM loganmzz/rust
 
 COPY . /home/rust/myproject
 
