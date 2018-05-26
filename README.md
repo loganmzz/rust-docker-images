@@ -4,7 +4,7 @@
 
 ### As a CLI
 
-docker run --rm --tty --user $(id -u) --volume $(pwd):$(pwd) --workdir $(pwd) -e "USER=$(id -un)" loganmzz/rust cargo test
+docker run --rm --tty --user "$(id -u):$(id -g)" --volume $(pwd):$(pwd) --workdir $(pwd) -e "USER=$(id -un)" loganmzz/rust cargo test
 
 ## Usage as builder pattern
 
