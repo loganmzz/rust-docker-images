@@ -1,14 +1,14 @@
 # Rust toolchain on Docker
 
-## Usage as CLI
+### Usage as CLI
 
-### As a CLI
+#### As a CLI
 
 docker run --rm --tty --user "$(id -u):$(id -g)" --volume $(pwd):$(pwd) --workdir $(pwd) -e "USER=$(id -un)" loganmzz/rust cargo test
 
-## Usage as builder pattern
+### Usage as builder pattern
 
-### Create a "build" image
+#### Create a "build" image
 
 Create a `Dockerfile.build` file:
 
@@ -38,7 +38,7 @@ docker build -t myproject-build-img -f Dockerfile.build .
 
 ```
 
-### Run image into a new container
+#### Run image into a new container
 
 ```bash
 
@@ -46,10 +46,20 @@ docker run --name myproject-build-cont myproject-build-img ls -alF
 
 ```
 
-### Retrieve output
+#### Retrieve output
 
 ```bash
 
 docker cp myproject-build-cont:/home/rust/myproject/target target
+
+```
+
+## Development
+
+Image is automatically build from Docker Hub. However, genenerated image can be tested with [bats](https://github.com/bats-core/bats-core/).
+
+```bash
+
+bats tests/
 
 ```
