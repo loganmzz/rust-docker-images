@@ -1,3 +1,6 @@
+> This repository has been archived. It has been superseded by https://hub.docker.com/_/rust
+
+
 # Rust toolchain on Docker
 
 ### Usage as CLI
